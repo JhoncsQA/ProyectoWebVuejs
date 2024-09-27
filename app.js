@@ -1,14 +1,10 @@
 const {createApp, ref}= Vue;
 const app = createApp({
 
-    template:`
-    <h1>Hola Mundo</h1>
-    <p>desde app.js<p>
     
-    {{vari}}
-
-    `,
     setup(){
+        let titulo=ref('Titulo React');
+        let app=ref('desde app.js');
         console.log('Hola jhon')
         let variable = 2;
         const vari = ref("50");      
@@ -17,7 +13,7 @@ const app = createApp({
             vari.value="20";
         }, 1000);
 
-        return {vari}
+        return {vari,titulo,app}
     }
     
     
