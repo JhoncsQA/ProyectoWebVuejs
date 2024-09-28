@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <span id="jhon2">
         <h1>{{sal}}</h1>
@@ -34,8 +36,40 @@
 
         <button V-on:click="change">cambiar Texto</button>
 
+        <li v-for>
+
+            <h1>{{estado}}</h1>
+            <button V-on:click="changestado">
+                Cambiar booleano
+            </button>
+        </li>
+
+        <span v-if="estado">{{estado}}</span>
+
+        <center>
+            <TABLE BORDER>
+                <TR>
+                    <TD><button v-on:click="changeincrementar">INCREMENTAR</button></TD>
+                    <TD><h1 align="center">{{numincremento}}</h1></TD>
+                    <TD><button v-on:click="changedecrementar">DECREMENTAR</button></TD>
+                </TR>
+                <TR>
+                    <TD align="center">{{resul}}</TD>
+                
+                    <TD><h2 align="center">EL VALOR ES</h2><h3 align="center">{{tipo}}</h3></TD>
+                    
+                
+                <TD align="center">PRIMO</TD>
+                </TR>
+            </TABLE>
+        </center>
+        
+
+        
+
     </span>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app2.js"></script>
 </body>
+
 </html>

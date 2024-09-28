@@ -17,6 +17,10 @@ const quotes = [
 const {createApp, ref}= Vue;
 
 const quotesview = ref ([{quote:"Esperando un clic", author:"Jhon"}]);
+const estado = ref(true);
+const numincremento = ref(0);
+const resul= ref("");
+const tipo= ref("");
 
 
 const app = createApp({
@@ -27,12 +31,38 @@ const app = createApp({
 
        const change=()=>{
         quotesview.value=quotes;
-       }
+        }
+        const changestado=()=>{
+            estado.value=!estado.value
+        }
+        const changeincrementar=()=>{
+            numincremento.value=numincremento.value+1;
+            changetipo();
+            changebinario();            
+        }
+        const changedecrementar=()=>{
+            numincremento.value=numincremento.value-1;
+            changetipo();
+            changebinario();
+        }
+        const changebinario=()=>{
+            resul.value=numincremento.value.toString(2);
+                
+        }
+        const changetipo=()=>{
+            if(numincremento.value>=0){
+                tipo.value=("Positivo")
+            }else{
+                tipo.value=("Negativo")
+            }
+
+        }
         
-        return{sal,quotes,quotesview,change};
+        return{sal,quotes,quotesview,change,changestado,estado,changeincrementar,numincremento,changedecrementar,resul,tipo};
     }
     
     
+    
+    
 });
-
 app.mount('#jhon2');
